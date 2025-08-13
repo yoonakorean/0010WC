@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>0-7 單字聽力測驗</title>
+  <title>0-10 單字聽力測驗</title>
   <style>
     body {
       font-family: sans-serif;
@@ -98,8 +98,8 @@
 
   <div id="game-container" class="hidden">
     <img src="logo.png" alt="Logo" id="logo" />
-    <div id="game-title">0-7 單字聽力測驗</div>
-    <p id="question-number">第 1 題 / 共 20 題</p>
+    <div id="game-title">0-10 單字聽力測驗</div>
+    <p id="question-number">第 1 題 / 共 67 題</p>
     <p id="timer">剩餘時間：-- 秒</p>
 
     <audio id="audio" controls></audio>
@@ -128,29 +128,77 @@
   </div>
 
   <script>
-    const gameTitle = "0-7 單字聽力測驗";
+    const gameTitle = "0-10 單字聽力測驗";
 
     const questions = [
-  { "word": "소포", "korean": "包裹", "audio": "audio/000701W.mp3", "choices": ["소포", "소보", "소코"] },
-  { "word": "시소", "korean": "蹺蹺板", "audio": "audio/000702W.mp3", "choices": ["시소", "시수", "씨소"] },
-  { "word": "호수", "korean": "湖", "audio": "audio/000703W.mp3", "choices": ["호수", "호주", "호시"] },
-  { "word": "마스크", "korean": "口罩", "audio": "audio/000704W.mp3", "choices": ["마스크", "마쓰크", "마시크"] },
-  { "word": "씨", "korean": "種子", "audio": "audio/000705W.mp3", "choices": ["씨", "시", "찌"] },
-  { "word": "비싸요", "korean": "很貴", "audio": "audio/000706W.mp3", "choices": ["비싸요", "비사요", "비싸오"] },
-  { "word": "쓰기", "korean": "寫作", "audio": "audio/000707W.mp3", "choices": ["쓰기", "쑤기", "스기"] },
-  { "word": "쏘가리", "korean": "鱖魚", "audio": "audio/000708W.mp3", "choices": ["쏘가리", "쏘기리", "쏘다리"] },
-  { "word": "저기", "korean": "那裡", "audio": "audio/000709W.mp3", "choices": ["저기", "조기", "적이"] },
-  { "word": "사자", "korean": "獅子", "audio": "audio/000710W.mp3", "choices": ["사자", "자사", "샤자"] },
-  { "word": "지도", "korean": "地圖", "audio": "audio/000711W.mp3", "choices": ["지도", "지두", "치도"] },
-  { "word": "바지", "korean": "褲子", "audio": "audio/000712W.mp3", "choices": ["바지", "파지", "빠지"] },
-  { "word": "처리", "korean": "處理", "audio": "audio/000713W.mp3", "choices": ["처리", "초리", "처니"] },
-  { "word": "마차", "korean": "馬車", "audio": "audio/000714W.mp3", "choices": ["마차", "마자", "마커"] },
-  { "word": "치료", "korean": "治療", "audio": "audio/000715W.mp3", "choices": ["치료", "지료", "치로"] },
-  { "word": "후추", "korean": "胡椒", "audio": "audio/000716W.mp3", "choices": ["후추", "호추", "후주"] },
-  { "word": "짜요", "korean": "鹹", "audio": "audio/000717W.mp3", "choices": ["짜요", "쨔요", "자요"] },
-  { "word": "쭈꾸미", "korean": "小章魚", "audio": "audio/000718W.mp3", "choices": ["쭈꾸미", "쭈쿠미", "쭉꾸미"] },
-  { "word": "찌다", "korean": "蒸", "audio": "audio/000719W.mp3", "choices": ["찌다", "치다", "찌따"] },
-  { "word": "짜리", "korean": "面值", "audio": "audio/000720W.mp3", "choices": ["짜리", "짜니", "차리"] }
+{ "word": "밖", "korean": "外面", "audio": "audio/001001W.mp3", "choices": ["밖", "박", "바"] },
+{ "word": "턱", "korean": "下巴", "audio": "audio/001002W.mp3", "choices": ["턱", "턱크", "턱이"] },
+{ "word": "목", "korean": "脖子", "audio": "audio/001003W.mp3", "choices": ["목", "몽", "무크"] },
+{ "word": "약", "korean": "藥", "audio": "audio/001004W.mp3", "choices": ["약", "얄", "야크"] },
+{ "word": "학교", "korean": "學校", "audio": "audio/001005W.mp3", "choices": ["학교", "학교", "학코"] },
+{ "word": "기차역", "korean": "火車站", "audio": "audio/001006W.mp3", "choices": ["기차역", "기차억", "기차예"] },
+{ "word": "약사", "korean": "藥師", "audio": "audio/001007W.mp3", "choices": ["약사", "약싸", "약쌰"] },
+{ "word": "가족", "korean": "家人", "audio": "audio/001008W.mp3", "choices": ["가족", "가조그", "가조크"] },
+{ "word": "부엌", "korean": "廚房", "audio": "audio/001009W.mp3", "choices": ["부엌", "부억", "부억크"] },
+{ "word": "목도리", "korean": "圍巾", "audio": "audio/001010W.mp3", "choices": ["목도리", "목토리", "목도르"] },
+{ "word": "반", "korean": "班級", "audio": "audio/001011W.mp3", "choices": ["반", "빤", "반느"] },
+{ "word": "손", "korean": "手", "audio": "audio/001012W.mp3", "choices": ["손", "손느", "손니"] },
+{ "word": "눈", "korean": "眼睛", "audio": "audio/001013W.mp3", "choices": ["눈", "눈느", "눈니"] },
+{ "word": "돈", "korean": "錢", "audio": "audio/001014W.mp3", "choices": ["돈", "돈느", "돈니"] },
+{ "word": "친구", "korean": "朋友", "audio": "audio/001015W.mp3", "choices": ["친구", "친구우", "친꾸"] },
+{ "word": "신문", "korean": "報紙", "audio": "audio/001016W.mp3", "choices": ["신문", "신문느", "신뭉"] },
+{ "word": "라면", "korean": "泡麵", "audio": "audio/001017W.mp3", "choices": ["라면", "라몐", "라멍"] },
+{ "word": "언니", "korean": "姐姐", "audio": "audio/001018W.mp3", "choices": ["언니", "언니이", "언니야"] },
+{ "word": "편지", "korean": "信", "audio": "audio/001019W.mp3", "choices": ["편지", "편찌", "편쥐"] },
+{ "word": "우산", "korean": "雨傘", "audio": "audio/001020W.mp3", "choices": ["우산", "우쌘", "우샨"] },
+{ "word": "밭", "korean": "田地", "audio": "audio/001021W.mp3", "choices": ["밭", "밭뜨", "밭트"] },
+{ "word": "낮", "korean": "白天", "audio": "audio/001022W.mp3", "choices": ["낮", "낟", "낟츠"] },
+{ "word": "꽃", "korean": "花", "audio": "audio/001023W.mp3", "choices": ["꽃", "꼳", "꼰"] },
+{ "word": "옷", "korean": "衣服", "audio": "audio/001024W.mp3", "choices": ["옷", "오츠", "오트"] },
+{ "word": "버섯", "korean": "蘑菇", "audio": "audio/001025W.mp3", "choices": ["버섯", "버썻", "버셋"] },
+{ "word": "빚", "korean": "債務", "audio": "audio/001026W.mp3", "choices": ["빚", "삿", "빋"] },
+{ "word": "도넛", "korean": "甜甜圈", "audio": "audio/001027W.mp3", "choices": ["도넛", "도너트", "도넛트"] },
+{ "word": "맛", "korean": "味道", "audio": "audio/001028W.mp3", "choices": ["맛", "맏", "맛트"] },
+{ "word": "벚꽃", "korean": "櫻花", "audio": "audio/001029W.mp3", "choices": ["벚꽃", "벚꽂", "벗꼿"] },
+{ "word": "숫자", "korean": "數字", "audio": "audio/001030W.mp3", "choices": ["숫자", "숫짜", "숫쟈"] },
+{ "word": "발", "korean": "腳", "audio": "audio/001031W.mp3", "choices": ["발", "밝", "발르"] },
+{ "word": "물", "korean": "水", "audio": "audio/001032W.mp3", "choices": ["물", "물르", "물르"] },
+{ "word": "굴", "korean": "牡蠣", "audio": "audio/001033W.mp3", "choices": ["굴", "굴르", "구르"] },
+{ "word": "별", "korean": "星星", "audio": "audio/001034W.mp3", "choices": ["별", "뼐", "뼈르"] },
+{ "word": "달", "korean": "月亮", "audio": "audio/001035W.mp3", "choices": ["달", "딸", "달르"] },
+{ "word": "아들", "korean": "兒子", "audio": "audio/001036W.mp3", "choices": ["아들", "아드르", "아들르"] },
+{ "word": "딸기", "korean": "草莓", "audio": "audio/001037W.mp3", "choices": ["딸기", "딸끼", "딸크"] },
+{ "word": "밤", "korean": "夜晚／栗子", "audio": "audio/001038W.mp3", "choices": ["밤", "밥", "밤므"] },
+{ "word": "꿈", "korean": "夢", "audio": "audio/001039W.mp3", "choices": ["꿈", "꿈", "꿈므"] },
+{ "word": "곰", "korean": "熊", "audio": "audio/001040W.mp3", "choices": ["곰", "곰므", "곰므"] },
+{ "word": "봄", "korean": "春天", "audio": "audio/001041W.mp3", "choices": ["봄", "봄므", "뽐"] },
+{ "word": "김치", "korean": "泡菜", "audio": "audio/001042W.mp3", "choices": ["김치", "김치이", "김치르"] },
+{ "word": "음식", "korean": "食物", "audio": "audio/001043W.mp3", "choices": ["음식", "음싹", "음식르"] },
+{ "word": "엄마", "korean": "媽媽", "audio": "audio/001044W.mp3", "choices": ["엄마", "엄마이", "엄마르"] },
+{ "word": "사슴", "korean": "鹿", "audio": "audio/001045W.mp3", "choices": ["사슴", "사슴므", "사슴르"] },
+{ "word": "하품", "korean": "打呵欠", "audio": "audio/001046W.mp3", "choices": ["하품", "하품므", "하품르"] },
+{ "word": "구름", "korean": "雲", "audio": "audio/001047W.mp3", "choices": ["구름", "구름므", "구름르"] },
+{ "word": "밥", "korean": "飯", "audio": "audio/001048W.mp3", "choices": ["밥", "밥므", "밥르"] },
+{ "word": "답", "korean": "答案", "audio": "audio/001049W.mp3", "choices": ["답", "답므", "답르"] },
+{ "word": "숲", "korean": "森林", "audio": "audio/001050W.mp3", "choices": ["숲", "숲므", "숲르"] },
+{ "word": "잎", "korean": "葉子", "audio": "audio/001051W.mp3", "choices": ["잎", "잎므", "잎르"] },
+{ "word": "지갑", "korean": "錢包", "audio": "audio/001052W.mp3", "choices": ["지갑", "지갑므", "지갑르"] },
+{ "word": "앞치마", "korean": "圍裙", "audio": "audio/001053W.mp3", "choices": ["앞치마", "앞치마므", "앞치마르"] },
+{ "word": "무릎", "korean": "膝蓋", "audio": "audio/001054W.mp3", "choices": ["무릎", "무릎므", "무릎르"] },
+{ "word": "수업", "korean": "課程", "audio": "audio/001055W.mp3", "choices": ["수업", "수업므", "수업르"] },
+{ "word": "접시", "korean": "盤子", "audio": "audio/001056W.mp3", "choices": ["접시", "접씨", "접시르"] },
+{ "word": "옆집", "korean": "隔壁", "audio": "audio/001057W.mp3", "choices": ["옆집", "옆찝", "옆집르"] },
+{ "word": "방", "korean": "房間", "audio": "audio/001058W.mp3", "choices": ["방", "방므", "방르"] },
+{ "word": "빵", "korean": "麵包", "audio": "audio/001059W.mp3", "choices": ["빵", "빵므", "빵르"] },
+{ "word": "강", "korean": "河／江", "audio": "audio/001060W.mp3", "choices": ["강", "강므", "강르"] },
+{ "word": "병", "korean": "瓶／病", "audio": "audio/001061W.mp3", "choices": ["병", "병므", "병르"] },
+{ "word": "영어", "korean": "英語", "audio": "audio/001062W.mp3", "choices": ["영어", "영어르", "영어므"] },
+{ "word": "가방", "korean": "包包", "audio": "audio/001063W.mp3", "choices": ["가방", "가방르", "가방므"] },
+{ "word": "식당", "korean": "餐廳", "audio": "audio/001064W.mp3", "choices": ["식당", "식당르", "식당므"] },
+{ "word": "짜장면", "korean": "炸醬麵", "audio": "audio/001065W.mp3", "choices": ["짜장면", "짜장먼", "짜장므"] },
+{ "word": "봉투", "korean": "信封", "audio": "audio/001066W.mp3", "choices": ["봉투", "봉투르", "봉투므"] },
+{ "word": "상어", "korean": "鯊魚", "audio": "audio/001067W.mp3", "choices": ["상어", "상어르", "상어므"] }
+
     ];
 
     let shuffledQuestions = [];
